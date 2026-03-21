@@ -9,9 +9,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "gtn-tfstate-bucket"
-    key            = "assessment.tfstate"
-    region         = "us-east-2"
+    bucket = "gtn-tfstate-bucket"
+    key    = "assessment.tfstate"
+    region = "us-east-2"
   }
 }
 

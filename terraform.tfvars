@@ -1,3 +1,3 @@
 aws_region   = "us-east-2"
-project_name = "my-awesome-project"
+project_name = "northwind"
 environment  = "dev"
