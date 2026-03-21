@@ -143,9 +143,9 @@ jobs:
         shell: bash
         run: |
           {
-            echo "## Terraform Plan: ${matrix.name}"
+            echo "## Terraform Plan: ${{ matrix.name }}"
             echo
-            echo "Path: \`${matrix.path}\`"
+            echo "Path: \`${{ matrix.path }}\`"
             echo
             echo '```text'
             cat plan.txt
