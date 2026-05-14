@@ -185,7 +185,7 @@ resource "aws_autoscaling_group" "web" {
   desired_capacity          = var.desired_capacity
   health_check_type         = "ELB"
   health_check_grace_period = 300
-  vpc_zone_identifier       = var.public_subnet_ids
+  vpc_zone_identifier       = var.private_subnet_ids
   target_group_arns         = [aws_lb_target_group.web.arn]
 
   launch_template {

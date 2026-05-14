@@ -11,14 +11,6 @@ resource "aws_security_group" "db" {
     cidr_blocks = [var.vpc_cidr]
   }
 
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
-
   tags = merge(var.tags, {
     Name = "${var.name_prefix}-db-sg"
   })
@@ -50,7 +42,7 @@ resource "aws_db_instance" "this" {
   manage_master_user_password = true
   backup_retention_period     = var.backup_retention
   skip_final_snapshot         = var.skip_final_snapshot
-  deletion_protection         = false
+  deletion_protection         = true
   auto_minor_version_upgrade  = true
   copy_tags_to_snapshot       = true
 

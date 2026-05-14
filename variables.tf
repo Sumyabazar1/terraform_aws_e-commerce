@@ -77,13 +77,13 @@ variable "db_allocated_storage" {
 variable "db_backup_retention" {
   description = "Backup retention window in days. Set to 0 to disable automated backups."
   type        = number
-  default     = 0
+  default     = 7
 }
 
 variable "db_skip_final_snapshot" {
   description = "Whether to skip the final snapshot on destroy."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "app_instance_type" {

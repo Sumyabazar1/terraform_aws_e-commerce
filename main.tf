@@ -44,14 +44,15 @@ module "database" {
 module "compute" {
   source = "./modules/compute"
 
-  name_prefix       = local.name_prefix
-  vpc_id            = module.network.vpc_id
-  vpc_cidr          = module.network.vpc_cidr_block
-  public_subnet_ids = module.network.public_subnet_ids
-  instance_type     = var.app_instance_type
-  desired_capacity  = var.app_desired_capacity
-  min_size          = var.app_min_size
-  max_size          = var.app_max_size
-  health_check_path = var.app_health_check_path
-  tags              = local.common_tags
+  name_prefix        = local.name_prefix
+  vpc_id             = module.network.vpc_id
+  vpc_cidr           = module.network.vpc_cidr_block
+  public_subnet_ids  = module.network.public_subnet_ids
+  private_subnet_ids = module.network.private_subnet_ids
+  instance_type      = var.app_instance_type
+  desired_capacity   = var.app_desired_capacity
+  min_size           = var.app_min_size
+  max_size           = var.app_max_size
+  health_check_path  = var.app_health_check_path
+  tags               = local.common_tags
 }

@@ -14,7 +14,12 @@ variable "vpc_cidr" {
 }
 
 variable "public_subnet_ids" {
-  description = "Public subnet IDs for the load balancer and web instances."
+  description = "Public subnet IDs for the load balancer."
+  type        = list(string)
+}
+
+variable "private_subnet_ids" {
+  description = "Private subnet IDs for the web tier Auto Scaling Group."
   type        = list(string)
 }
 

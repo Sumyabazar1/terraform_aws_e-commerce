@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.0.0"
+  required_version = ">= 1.6, < 2.0"
 
   required_providers {
     aws = {
@@ -8,11 +8,9 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket = "gtn-tfstate-bucket"
-    key    = "assessment.tfstate"
-    region = "us-east-2"
-  }
+  # Backend values are supplied via backend.hcl (gitignored).
+  # Run: terraform init -backend-config=backend.hcl
+  backend "s3" {}
 }
 
 provider "aws" {
